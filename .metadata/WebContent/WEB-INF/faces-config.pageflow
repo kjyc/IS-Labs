@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16362020536770" configfile="/LoginJSF/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="Hola.xhtml" x="552" y="205" id="pf16362021330171" inlinks="pf16362021330172" path="/Hola.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="Login.xhtml" x="306" y="347" id="pf16362021330173" outlinks="pf16362021330172 pf16362021330174" path="/Login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="Pirata.xhtml" x="548" y="432" id="pf16362021330175" inlinks="pf16362021330174" path="/Pirata.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Hola.xhtml" x="552" y="205" id="pf16362021330171" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf16362021330172" path="/Hola.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Login.xhtml" x="306" y="347" id="pf16362021330173" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf16362021330172 pf16362021330174" path="/Login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Pirata.xhtml" x="548" y="432" id="pf16362021330175" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf16362021330174" path="/Pirata.xhtml"/>
   <links id="pf16362021330172" target="pf16362021330171" source="pf16362021330173" outcome="ok"/>
   <links id="pf16362021330174" target="pf16362021330175" source="pf16362021330173" outcome="error"/>
 </pageflow:Pageflow>

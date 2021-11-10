@@ -9,16 +9,22 @@
 <f:view>
 	<h:head>
 		<title>Aplicación JavaServer Faces</title>
+		<h:outputScript library="js" name="infoJavaScript.js" />
 	</h:head>
 	<h:body>
 		<h:form>
 			<h3>
-				Bienvenido a JavaServer Faces, 
+				Bienvenido a JavaServer Faces,
 				<h:outputText value="#{login.nombre}" />
 				!
 			</h3>
 			<p>
 				<h:outputText value="#{login.fecha}" />
+			</p>
+			<p>
+				<h:commandButton value="Aceptar"
+					onclick="showMessage('No está definido donde ir')">
+				</h:commandButton>
 			</p>
 		</h:form>
 	</h:body>
