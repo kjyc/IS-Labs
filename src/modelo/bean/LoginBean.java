@@ -1,9 +1,12 @@
 package modelo.bean;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.faces.event.AjaxBehaviorEvent;
 
 import org.primefaces.event.SelectEvent;
 
@@ -11,6 +14,38 @@ public class LoginBean {
 	private String nombre;
 	private String password;
 	private Date fecha;
+	private TipoUsuario tipo;
+	private static List<TipoUsuario> tipos = new ArrayList<TipoUsuario>();
+
+	public LoginBean() {
+		tipos.add(new TipoUsuario(1, "estudiante"));
+		tipos.add(new TipoUsuario(2, "profesor"));
+	}
+
+	public TipoUsuario getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoUsuario tipo) {
+		this.tipo = tipo;
+		System.out.println("El tipo del usuario: " + tipo.getCodigo() + "/" + tipo.getTipoUsu());
+	}
+
+	public List<TipoUsuario> getTipos() {
+		return tipos;
+	}
+
+	public void setTipos(List<TipoUsuario> tipos) {
+		this.tipos = tipos;
+	}
+
+	public static TipoUsuario getObject(String tipo) {
+		for (TipoUsuario t : tipos) {
+			if (tipo.equals(t.getTipoUsu()))
+				return t;
+		}
+		return null;
+	}
 
 	public Date getFecha() {
 		return fecha;
@@ -52,5 +87,16 @@ public class LoginBean {
 
 	public void onDateSelect(SelectEvent event) {
 		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Fecha escogida: " + event.getObject()));
+	}
+
+	public void listener(AjaxBehaviorEvent event) {
+		FacesContext.getCurrentInstance().addMessage(null,
+				new FacesMessage("El tipo del usuario:" + tipo.getCodigo() + "/" + tipo.getTipoUsu()));
+	}
+
+	public void onEventSelect(SelectEvent event) {
+		this.tipo = (TipoUsuario) event.getObject();
+		FacesContext.getCurrentInstance().addMessage("miForm:mensajes",
+				new FacesMessage("El tipo del usuario (tabla):" + tipo.getCodigo() + "/" + tipo.getTipoUsu()));
 	}
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#LoginComponente.xhtml"
+  PATH="/LoginComponente.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#LoginComponente.xhtml:0" NAME="item"
+   PATH="/LoginComponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="ok::#HolaComponente.xhtml" NAME="output"
+    PATH="/HolaComponente.xhtml" TARGET="rules:#HolaComponente.xhtml"
+    TITLE="ok" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#LoginComponente.xhtml:1" NAME="item1"
+   PATH="/LoginComponente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="error::#PirataComponente.xhtml"
+    NAME="output" PATH="/PirataComponente.xhtml"
+    TARGET="rules:#PirataComponente.xhtml" TITLE="error" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#PirataComponente.xhtml"
+  PATH="/PirataComponente.xhtml" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#HolaComponente.xhtml"
+  PATH="/HolaComponente.xhtml" model-entity="JSFProcessGroup"/>
+</PROCESS>

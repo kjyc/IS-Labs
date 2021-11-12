@@ -8,18 +8,25 @@
 
 <f:view>
 	<h:head>
-		<title>Aplicación de Java Server Faces</title>
+		<title>Aplicación JavaServer Faces</title>
 		<h:outputScript library="js" name="infoJavaScript.js" />
 	</h:head>
-
-	<ui:composition template="/WEB-INF/facelets/templates/Plantilla.xhtml">
-		<ui:define name="titulo">  
-    Hola 
-  </ui:define>
-
-		<ui:define name="cuerpo">
-			<ui:include src="HolaComponente.xhtml" />
-		</ui:define>
-	</ui:composition>
+	<h:body>
+		<h:form>
+			<h3>
+				Bienvenido a JavaServer Faces,
+				<h:outputText value="#{login.nombre}" />
+				!
+			</h3>
+			<p>
+				<h:outputText value="#{login.fecha}" />
+			</p>
+			<p>
+				<h:commandButton value="Aceptar"
+					onclick="showMessage('No está definido donde ir')">
+				</h:commandButton>
+			</p>
+		</h:form>
+	</h:body>
 </f:view>
 </html>

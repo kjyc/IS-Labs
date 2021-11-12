@@ -8,18 +8,13 @@
 
 <f:view>
 	<h:head>
-		<title>Aplicación de Java Server Faces</title>
-		<h:outputScript library="js" name="infoJavaScript.js" />
+		<title>Aplicación JavaServer Faces</title>
+		<h:outputStylesheet library="css" name="style.css" />
 	</h:head>
-
-	<ui:composition template="/WEB-INF/facelets/templates/Plantilla.xhtml">
-		<ui:define name="titulo">  
-    Hola 
-  </ui:define>
-
-		<ui:define name="cuerpo">
-			<ui:include src="HolaComponente.xhtml" />
-		</ui:define>
-	</ui:composition>
+	<h:body>
+		<h:form>
+			<h3>¡Pirata, no puedes pasar!.</h3>
+		</h:form>
+	</h:body>
 </f:view>
 </html>
